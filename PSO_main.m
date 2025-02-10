@@ -61,14 +61,7 @@ for pigre = pigre_values
 
             % 2) calcolo della funzione obiettivo
             for p = 1:P
-                var_port(p) = x(p, :) * variance * x(p, :)'; % varianza
-                med_port(p) = x(p, :) * media'; % media
-                vinc_1(p) = abs(sum(x(p, :)) - 1); % violazione del vincolo di bilancio
-                vinc_2(p) = abs(x(p, :) * media' - pigre); %  violazione del vincolo di redditività
-                for i = 1:numvar
-                    app_1(p, i) = max(0, -x(p, i));
-                end
-                %vinc_3(p) = sum(app_1(p, :)); % violazione dei vincoli x_i >= 0
+                ... 
             end
             % calcolo funzione di fitness
             f = var_port + (1 / epsilon1) * (vinc_1 + vinc_2);
